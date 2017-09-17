@@ -17,6 +17,7 @@
 [ignore文件.md](版本控制/git/ignore文件.md)
 
 * 配置ignore文件（配置项目根目录下的ignore文件即可）
+* 进行代码托管
 
 
 
