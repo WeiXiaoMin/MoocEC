@@ -1,5 +1,11 @@
 [TOC]
 
+## 项目概述
+
+优点：架构较为清晰
+
+缺点：枚举类过多
+
 ## 项目构建步骤
 
 ### 一、构建整体框架
@@ -41,6 +47,23 @@
 相关笔记
 
 [Iconify字体图标库.md](第三方库/字体图标库/Iconify字体图标库.md)
+
+
+#### 3. 单Activity架构搭建（Fragmentation框架的集成）
+
+相关笔记
+
+[Fragmentation库的集成.md](第三方库/Fragmentation库/Fragmentation库的集成.md)
+
+
+#### 4. 搭建网络框架（集成Retrofit2+RxJava2）
+
+相关笔记
+
+[RxJava2集成.md](第三方库/异步框架/RxJava2集成.md)
+
+[Retrofit2集成.md](第三方库/异步框架/Retrofit2集成.md)
+
 
 
 

@@ -6,6 +6,8 @@ import com.joanzapata.iconify.Iconify;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import okhttp3.Interceptor;
+
 /**
  * 管理各个配置项
  * Created by wxm on 2017/9/17.
@@ -17,7 +19,8 @@ public final class Configurator {
     private static final HashMap<Object, Object> LATTE_CONFIGS = new HashMap<>();
     // wxm:保存将要初始化的字体图标
     private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
-
+    // wxm:okhttp拦截器
+    private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
 
     private Configurator() {
         // wxm:单例模式能保证线程安全
@@ -86,6 +89,22 @@ public final class Configurator {
                 initializer.with(ICONS.get(i));
             }
         }
+        return this;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // 添加okhttp拦截器
+    ///////////////////////////////////////////////////////////////////////////
+
+    public Configurator withInterceptor(Interceptor interceptor){
+        INTERCEPTORS.add(interceptor);
+        LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR,INTERCEPTORS);
+        return this;
+    }
+
+    public Configurator withInterceptors(ArrayList<Interceptor> interceptors){
+        INTERCEPTORS.addAll(interceptors);
+        LATTE_CONFIGS.put(ConfigKeys.INTERCEPTOR,INTERCEPTORS);
         return this;
     }
 

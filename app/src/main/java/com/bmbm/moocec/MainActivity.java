@@ -1,13 +1,12 @@
 package com.bmbm.moocec;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import com.bmbm.latte_core.activitys.ProxyActivity;
+import com.bmbm.latte_core.delegates.LatteDelegate;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ProxyActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public LatteDelegate getRootDelegate() {
+        return new ExampleDelegate();
     }
 }
